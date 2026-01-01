@@ -1,26 +1,30 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 
-import "./globals.css";
+import ReactLenis from "lenis/react"
+
+import "./globals.css"
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-});
+})
 
 export const metadata: Metadata = {
   title: "Animations",
   description: "Learning animations with GSAP.",
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <ReactLenis root>
+        <body className={`${inter.className} antialiased`}>{children}</body>
+      </ReactLenis>
     </html>
-  );
+  )
 }
